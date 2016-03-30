@@ -1,4 +1,15 @@
-<h1>Ocean Viz</h1>
-<a href="flat/index.html">Flat Map</a>
-<br>
-<a href="globe/index.html">Globe</a>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+   <h1>Ocean Viz</h1>
+   <a href="flat/index.html">Flat Map</a>
+   <br>
+   <a href="globe/index.html">Globe</a>
+   <script>
+      var my_data = {};
+      $.getJSON( "data.json", function( data ) {
+         my_data=data;
+       });
+   </script>
+</body>

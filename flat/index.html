@@ -30,8 +30,18 @@ svg {
 </style>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <body>
 <script>
+var current_data = {};
+$.getJSON("../data.json",function(data){
+   current_data = data;
+});
+
+var world_data={}
+$.getJSON("world-50m.json", function(data){
+   world_data = data;
+});
 
 var width = 1920,
     height = 1080;
