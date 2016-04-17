@@ -73,7 +73,7 @@ svg
     .call(zoom)
     .call(zoom.event);
 
-d3.json("world-50m.json", function(error, world) {
+/*d3.json("world-50m.json", function(error, world) {
   if (error) throw error;
 
   g.append("path")
@@ -89,6 +89,15 @@ d3.json("world-50m.json", function(error, world) {
   g.append("path")
       .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
       .attr("class", "boundary")
+      .attr("d", path);
+});*/
+
+d3.json("data.json", function(error, current) {
+   if(error) throw error;
+
+   g.append("path")
+      .data(current.lat)
+      .attr("class", "land")
       .attr("d", path);
 });
 
